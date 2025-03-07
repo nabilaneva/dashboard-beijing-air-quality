@@ -6,12 +6,8 @@ import streamlit as st
 from babel.numbers import format_currency
 sns.set(style='dark')
 
-script_dir = Path(os.getcwd()) if "__file__" not in globals() else Path(__file__).parent
-csv_path = script_dir / "Dashboard" / "all_data.csv"
-logo_path = script_dir / "logo.png"
-
 # Load dataset
-all_df = pd.read_csv(csv_path)
+all_df = pd.read_csv('./Dashboard/all_data.csv')
 all_df["date"] = pd.to_datetime(all_df[["year", "month", "day"]])
 all_df.sort_values(by="date", inplace=True)
 all_df.reset_index(inplace=True, drop=True)
@@ -24,7 +20,7 @@ min_date = all_df["date"].min()
 max_date = all_df["date"].max()
 
 with st.sidebar:
-    st.image(logo_path)
+    st.image('logo.png')
     start_date, end_date = st.date_input("Rentang Waktu", min_value=min_date, max_value=max_date, value=[min_date, max_date])
     selected_parameter = st.sidebar.selectbox("Pilih Parameter", parameters)
 
