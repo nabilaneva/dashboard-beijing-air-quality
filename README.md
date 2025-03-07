@@ -2,6 +2,10 @@
 
 Dashboard ini menganalisis data kualitas udara dari 12 stasiun di Beijing menggunakan **Streamlit** dan **RFM Analysis**.
 
+## 📌 Live Dashboard
+
+https://nabilaneva-airquality.streamlit.app/
+
 ## 📂 Dataset
 
 Dataset yang digunakan mencakup data kualitas udara dari tahun **2013 - 2017**.  
