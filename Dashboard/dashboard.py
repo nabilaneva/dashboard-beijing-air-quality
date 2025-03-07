@@ -8,7 +8,7 @@ sns.set(style='dark')
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
-csv_path = os.path.join(script_dir, "all_data.csv")
+csv_path = os.path.join(os.path.dirname(__file__), "Dashboard", "all_data.csv")
 
 # Load dataset
 all_df = pd.read_csv(csv_path)
