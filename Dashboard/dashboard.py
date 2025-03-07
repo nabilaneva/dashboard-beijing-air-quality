@@ -6,8 +6,12 @@ import streamlit as st
 from babel.numbers import format_currency
 sns.set(style='dark')
 
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+csv_path = os.path.join(script_dir, "all_data.csv")
+
 # Load dataset
-all_df = pd.read_csv("C:/Users/nabil/OneDrive/Desktop/Dashboard Beijing Air quality/Dashboard/all_data.csv")
+all_df = pd.read_csv(csv_path)
 all_df["date"] = pd.to_datetime(all_df[["year", "month", "day"]])
 all_df.sort_values(by="date", inplace=True)
 all_df.reset_index(inplace=True, drop=True)
