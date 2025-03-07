@@ -6,10 +6,9 @@ import streamlit as st
 from babel.numbers import format_currency
 sns.set(style='dark')
 
-script_dir = os.path.dirname(os.path.abspath(__file__))
-
-csv_path = os.path.join(os.path.dirname(__file__), "Dashboard", "all_data.csv")
-logo_path = os.path.join(script_dir, "logo.png")
+script_dir = Path(__file__).parent
+csv_path = script_dir / "Dashboard" / "all_data.csv"
+logo_path = script_dir / "logo.png"
 
 # Load dataset
 all_df = pd.read_csv(csv_path)
