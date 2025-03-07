@@ -9,6 +9,7 @@ sns.set(style='dark')
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
 csv_path = os.path.join(os.path.dirname(__file__), "Dashboard", "all_data.csv")
+logo_path = os.path.join(script_dir, "logo.png")
 
 # Load dataset
 all_df = pd.read_csv(csv_path)
@@ -24,7 +25,7 @@ min_date = all_df["date"].min()
 max_date = all_df["date"].max()
 
 with st.sidebar:
-    st.image("C:/Users/nabil/OneDrive/Desktop/Dashboard Beijing Air quality/logo.png")
+    st.image(logo_path)
     start_date, end_date = st.date_input("Rentang Waktu", min_value=min_date, max_value=max_date, value=[min_date, max_date])
     selected_parameter = st.sidebar.selectbox("Pilih Parameter", parameters)
 
